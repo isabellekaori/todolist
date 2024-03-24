@@ -49,6 +49,6 @@ public class TaskService implements ITaskService {
         taskRepository.deleteById(id);
     }
     private boolean taskAlreadyExists(String name) {
-        return taskRepository.findByEmail(name).isPresent();
+        return taskRepository.findByName(name).isPresent();
     }
 }
