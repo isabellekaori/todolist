@@ -1,7 +1,6 @@
 package com.estudodejava.todolist.service;
 
 import com.estudodejava.todolist.exception.TaskNotFoundException;
-import com.estudodejava.todolist.exception.taskAlreadyExistsException;
 import com.estudodejava.todolist.model.Task;
 import com.estudodejava.todolist.repository.TaskRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,10 +17,6 @@ public class TaskService implements ITaskService {
     }
     @Override
     public Task addTask(Task task) {
-        if(taskAlreadyExists(task.getName())){
-            throw new taskAlreadyExistsException(task.getName() + "already exists!");
-        }
-
         return taskRepository.save(task);
     }
 

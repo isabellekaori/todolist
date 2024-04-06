@@ -22,7 +22,6 @@ public class Task {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
-    @NaturalId (mutable = true)
     private String name;
     private String description;
 //    private List<String> category;
